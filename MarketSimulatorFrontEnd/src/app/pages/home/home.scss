@@ -1,0 +1,71 @@
+.container-images {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 50%));
+    box-sizing: border-box;
+}
+
+.img-tjr-with-cash {
+    width: 100%;
+    height: 100%;
+    background-image: url('/tjr-with-cash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.img-tjr-with-cash:hover {
+    transform-style: preserve-3d;
+    box-shadow: 0 0 500px rgba(44, 171, 108, 0.871);
+}
+
+.img-tjr-with-cash:hover~.tjr-two-images {
+    background-color: rgba(8, 8, 8, 0.71);
+
+    .img-tjr-with-timepices,
+    .img-tjr-with-koenigsegg {
+        filter: blur(5px);
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+}
+
+
+.tjr-two-images {
+    width: 100%;
+    height: 100%;
+
+
+    .img-tjr-with-timepices {
+        width: 100%;
+        height: 50%;
+        background-image: url('/tjr-with-timepiece.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    .img-tjr-with-koenigsegg {
+        width: 100%;
+        height: 50%;
+        background-image: url('/tjr-with-koenigsegg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.img-tjr-with-timepices:hover {
+    transform-style: preserve-3d;
+    box-shadow: 0 0 500px rgb(0, 123, 255, 0.5);
+
+}
+
+.img-tjr-with-koenigsegg:hover {
+    transform-style: preserve-3d;
+    box-shadow: 0 0 500px rgb(0, 123, 255, 0.5);
+
+}

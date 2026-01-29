@@ -1,0 +1,50 @@
+<div class="orders">
+    <section class="ordersBook">
+        <table class="orders-bids">
+            <caption>BIDS</caption>
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th>Price Buy</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (order of ordersBids; track $index) {
+                <tr>
+                    <td>{{order.quantity}}</td>
+                    <td class="order-price-bids">${{order.price}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <table class="orders-asks">
+            <caption>ASKS</caption>
+            <thead>
+                <tr>
+                    <th>Price Sell</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (order of ordersAsks; track $index) {
+                <tr>
+                    <td>${{order.price}}</td>
+                    <td>{{order.quantity}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+    <div class="container-btn-request-interval">
+        <button (click)="sendRandomRequest()">Enviar Una Orden</button>
+        <button (click)="toggleAutoSend()">
+            {{ isAutoSending ? 'Detener' : 'Iniciar' }} Envío Automático
+        </button>
+        <label>
+            Intervalo (ms):
+            <input type="number" [formControl]="intervalControl" [min]="MIN_INTERVAL" (change)="updateInterval()" />
+        </label>
+    </div>
+
+</div>

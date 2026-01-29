@@ -1,0 +1,18 @@
+ header {
+     background-color: transparent;
+     padding: 20px;
+
+ }
+
+ nav a {
+     color: black;
+     margin: 0 10px;
+     text-decoration: none;
+     padding: 10px 20px;
+ }
+
+ nav a:hover {
+     background-color: rgba(49, 49, 207, 0.477);
+     color: black;
+     border-radius: 20px;
+ }
