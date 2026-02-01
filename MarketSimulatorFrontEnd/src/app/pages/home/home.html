@@ -1,12 +1,15 @@
 <div class="container-images">
 
-    <div class="img-tjr-with-cash"></div>
+    <div class="img-tjr-with-cash" (mouseenter)="onImageHover(true)" (mouseleave)="onImageHover(false)">
+        <h2 routerLink="/Graphic">FULL GRAPHIC</h2>
+    </div>
 
-    <div class="tjr-two-images">
-        <div class="img-tjr-with-timepices"></div>
-        <div class="img-tjr-with-koenigsegg"></div>
+    <div class="img-tjr-with-timepices" (mouseenter)="onImageHover(true)" (mouseleave)="onImageHover(false)">
+        <h2 routerLink="/OrderBook">ORDER BOOK</h2>
+    </div>
+
+    <div class="img-tjr-with-koenigsegg" (mouseenter)="onImageHover(true)" (mouseleave)="onImageHover(false)">
+        <h2 routerLink="/About">ABOUT</h2>
     </div>
 
 </div>
-<!-- <div class="img-tjr-with-cash" (mouseenter)="onImageHover(true)" (mouseleave)="onImageHover(false)">
-    </div> -->

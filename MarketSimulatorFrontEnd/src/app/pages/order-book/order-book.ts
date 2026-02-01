@@ -4,6 +4,8 @@ import { Order, OrdersBook } from '../../services/orders-book';
 import { from, Subscription } from 'rxjs';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Random } from '../../services/random';
+import { FinishMarket } from '../../services/finish-market';
+import { errorContext } from 'rxjs/internal/util/errorContext';
 
 @Component({
   selector: 'app-order-book',
@@ -27,7 +29,8 @@ export class OrderBook implements OnInit, OnDestroy {
   constructor(
     private orders: OrdersBook,
     private cdr: ChangeDetectorRef,
-    private randomService: Random
+    private randomService: Random,
+    private finishMarketService: FinishMarket
   ) { }
 
   ngOnInit() {
@@ -46,6 +49,14 @@ export class OrderBook implements OnInit, OnDestroy {
     this.randomService.sendRequestRandom().subscribe({
       error: (error) => {
         console.error('Error sending random request:', error);
+      }
+    });
+  }
+
+  sendFinishMarketRequest() {
+    this.finishMarketService.sendRequestFinishMarket().subscribe({
+      error: (error) => {
+        console.error('Error sending random request:', error)
       }
     });
   }
